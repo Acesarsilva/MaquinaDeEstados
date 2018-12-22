@@ -1,0 +1,32 @@
+|Memoria
+contador[0] => Decoder1.IN3
+contador[0] => Mux0.IN19
+contador[0] => Mux1.IN19
+contador[1] => Decoder1.IN2
+contador[1] => Mux0.IN18
+contador[1] => Mux1.IN18
+contador[1] => Mux2.IN10
+contador[1] => Mux3.IN10
+contador[1] => Mux4.IN10
+contador[2] => Decoder1.IN1
+contador[2] => Mux0.IN17
+contador[2] => Mux1.IN17
+contador[2] => Mux2.IN9
+contador[2] => Mux3.IN9
+contador[2] => Mux4.IN9
+contador[3] => Decoder1.IN0
+contador[3] => Mux0.IN16
+contador[3] => Mux1.IN16
+contador[3] => Mux2.IN8
+contador[3] => Mux3.IN8
+contador[3] => Mux4.IN8
+memoria[0] <= memoria[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+memoria[1] <= memoria[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+memoria[2] <= memoria[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+memoria[3] <= <GND>
+entrada[0] <= <GND>
+entrada[1] <= entrada[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+entrada[2] <= entrada[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+entrada[3] <= <GND>
+
+
