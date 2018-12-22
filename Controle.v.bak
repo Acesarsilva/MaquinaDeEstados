@@ -1,0 +1,51 @@
+module Controle(Tx,Ty,Tz,Tula,clock,memoria);
+input clock;
+input wire [3:0] memoria;
+output reg [3:0] Tx, Ty, Tz, Tula;
+
+parameter CLEAR = 4'd0;
+parameter HOLD = 4'd1;
+parameter LOAD = 4'd2;
+parameter SHFTR = 4'd3;
+
+always @(posedge clock)begin
+	case(memoria)
+		4'd0:begin
+			Tx = CLEAR;
+		    Ty = CLEAR;
+		    Tz = CLEAR;
+		    Tula = CLEAR;
+		end
+		4'd1:begin
+			Tx = LOAD;
+		    Ty = HOLD;
+		    Tz = HOLD;
+	        Tula = CLEAR;
+		end
+		4'd2:begin 
+			Tx = LOAD;
+		    Ty = LOAD;
+	        Tz = HOLD;
+            Tula = CLEAR;
+		end     
+		4'd3:begin
+			Tx = CLEAR;
+		    Ty = LOAD;
+		    Tz = HOLD;
+		    Tula = CLEAR;
+		end      
+		4'd4:begin
+			Tx = HOLD;
+		    Ty = SHFTR;
+		    Tz = HOLD;
+		    Tula = CLEAR;  
+		end
+		4'd5:begin
+			Tx = CLEAR;
+		    Ty = CLEAR;
+		    Tz = LOAD;
+		    Tula = CLEAR; 
+		end                       
+	endcase
+end	
+endmodule
